@@ -30,3 +30,11 @@ jobs:
       - name: trigger3
         run: |  
           echo ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Commit changes
+        run: |
+          git config --global user.name 'xxradar'
+          git config --global user.email 'xxradar@radarhack'
+          echo demo >demo.txt
+          git add demo.txt
+          git commit -m "Adding demo.txt"
