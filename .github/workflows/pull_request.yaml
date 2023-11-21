@@ -29,4 +29,4 @@ jobs:
 
       - name: trigger3
         run: |  
-          echo ${{ secrets.GITHUB_TOKEN}}
+          echo ${{ secrets.GITHUB_TOKEN }}
