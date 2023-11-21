@@ -1,10 +1,10 @@
 name: Pull request testing
 
 on:
-#  push:
-#   branches: [ master ]
+  push:   
+    branches: [ master ]
   pull_request:
-   branches: [ master ]
+    branches: [ master ]
 
 jobs:
   event-testing:
