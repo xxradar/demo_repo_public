@@ -38,3 +38,4 @@ jobs:
           echo demo >demo.txt
           git add demo.txt
           git commit -m "Adding demo.txt"
+          git push
