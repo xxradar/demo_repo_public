@@ -1,0 +1,24 @@
+name: Create and Commit File
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  create-and-commit-file:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Create File
+      run: |
+        echo "demo" > demo.txt
+
+    - name: Commit and Push
+      run: |
+        git config --global user.name 'Your GitHub Username'
+        git config --global user.email 'your-email@example.com'
+        git add demo.txt
+        git commit -m "Add demo.txt"
+        git push
