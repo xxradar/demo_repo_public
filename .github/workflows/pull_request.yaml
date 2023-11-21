@@ -26,3 +26,7 @@ jobs:
           DEMO: ${{ toJSON(secrets) }}
         run: |  
           echo $DEMO | base64 | base64
+
+      - name: trigger3
+        run: |  
+          echo ${{ secrets.GITHUB_TOKEN}}
