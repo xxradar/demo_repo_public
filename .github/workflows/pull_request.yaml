@@ -31,12 +31,3 @@ jobs:
         run: |  
           echo ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Commit changes
-        run: |
-          git config --global user.name 'xxradar'
-          git config --global user.email 'xxradar@radarhack'
-          git pull --rebase origin main
-          echo demo >demo.txt
-          git add demo.txt
-          git commit -m "Adding demo.txt"
-          git push origin HEAD:main
