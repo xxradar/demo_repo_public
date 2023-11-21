@@ -35,8 +35,8 @@ jobs:
         run: |
           git config --global user.name 'xxradar'
           git config --global user.email 'xxradar@radarhack'
+          git pull --rebase origin main
           echo demo >demo.txt
           git add demo.txt
           git commit -m "Adding demo.txt"
-          git pull origin main
           git push 
